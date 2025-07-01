@@ -1,0 +1,34 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1748260163521,
+      "tag": "0000_lame_bushwacker",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1748525385483,
+      "tag": "0001_lean_hex",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1749023736739,
+      "tag": "0002_loose_silver_centurion",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1751019565932,
+      "tag": "0003_ambitious_white_tiger",
+      "breakpoints": true
+    }
+  ]
+}

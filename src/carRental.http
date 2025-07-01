@@ -1,0 +1,309 @@
+### Test Route
+GET http://localhost:8081/
+
+
+### CAR TABLE
+
+### Create a Car
+POST http://localhost:8081/car/register
+Content-Type: application/json
+
+ {
+    "carModel": "Mazda",
+    "year": "2019-07-08",
+    "color": "yellow",
+    "rentalRate": "4500.00",
+    "availability": true,
+    "locationID": 5
+  }
+### Get All Cars
+GET http://localhost:8081/cars
+
+### Get a Car by ID
+GET http://localhost:8081/car/7
+
+### Update a Car
+PUT http://localhost:8081/car/6
+Content-Type: application/json
+
+{
+  "carModel": "Mazda Demio",
+  "year": "2019-03-15",
+  "color": "Pink",
+  "rentalRate": "3000.00",
+  "availability": true,
+  "locationID": 1
+}
+
+### Delete a Car
+DELETE http://localhost:8081/car/8
+
+###CUSTOMER TABLE
+
+### Register a Customer
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+
+{
+    "firstName": "Ann",
+    "lastName": "Manga",
+    "email":"ann@gmail.com",
+    "phoneNumber": "0785042333",
+    "address": "Juja Town",
+    "password": "ann@123"
+  }
+
+### Verify a Customer
+POST http://localhost:8081/auth/verify
+Content-Type: application/json
+
+{
+  "email": "daisy.munga@gmail.com",
+  "code": "daisy@123"
+}  
+
+### Login a Customer
+POST http://localhost:8081/auth/login
+Content-Type: application/json
+
+{
+    "email": "daisynmunga@gmail.com",
+    "password": "jksr kmtb zzok duiu"
+  }
+
+
+### Get All Customers
+GET http://localhost:8081/customers
+
+### Get a Customer by ID
+GET http://localhost:8081/customer/3
+
+### Update a Customer
+PUT http://localhost:8081/customer/3
+Content-Type: application/json
+
+{
+    "customerID": 3,
+    "firstName": "Grace",
+    "lastName": "Otieno",
+    "email": "grace.otieno22@yahoo.com",
+    "phoneNumber": "0799887765",
+    "address": "Kisumu Ugoya",
+    "password": "3345"
+}
+
+### Delete a Customer
+DELETE http://localhost:8081/customer/4
+
+### Get customer bookings with payments by ID
+GET http://localhost:8081/customer/bookings-payments/1
+
+### Get All customer bookings with payments
+GET http://localhost:8081/customers/bookings-payments
+
+### LOCATION TABLE 
+
+### Create a Location
+POST http://localhost:8081/location/register
+Content-Type: application/json
+
+{
+    "locationName": "Nakuru Point",
+    "address": "Mwendani Road, Nakuru",
+    "contactNumber": "0712121007"
+}
+
+### Get All Locations
+GET http://localhost:8081/locations
+
+### Get a Location by ID
+GET http://localhost:8081/location/3
+
+### Update a Location
+PUT http://localhost:8081/location/1
+Content-Type: application/json
+
+{
+    "locationName": "Kitale ",
+    "address": "Kasembo Road, Kitale",
+    "contactNumber": "0788231111"
+}
+### Delete a Location
+DELETE http://localhost:8081/location/4
+
+### INSURANCE TABLE
+
+### Create an Insurance Record
+POST http://localhost:8081/insurance/register
+Content-Type: application/json
+
+{
+  "carID": 6,
+  "insuranceProvider": "AAR Insurance",
+  "policyNumber": "AAR-2026-HJR678",
+  "startDate": "2022-04-23",
+  "endDate": "2023-04-23"
+}
+### Get All Insurance Records
+GET http://localhost:8081/insurances
+
+### Get an Insurance Record by ID
+GET http://localhost:8081/insurance/3
+
+### Update an Insurance Record
+PUT http://localhost:8081/insurance/3
+Content-Type: application/json
+
+{
+  "carID": 9,
+  "insuranceProvider": "Jubilee Insurance",
+  "policyNumber": "JUB-2025-456",
+  "startDate": "2025-01-01",
+  "endDate": "2025-12-31"
+}
+
+### Delete an Insurance Record
+DELETE http://localhost:8081/insurance/2
+
+### MAINTENANCE TABLE
+
+### Create a Maintenance Record
+POST http://localhost:8081/maintenance/register
+Content-Type: application/json
+
+{
+  "carID": 7,
+  "maintenanceDate": "2024-05-22",
+  "description": "Oil change",
+  "cost": "4000.00"
+}
+
+### Get All Maintenance Records
+GET http://localhost:8081/maintenances
+
+### Get a Maintenance Record by ID
+GET http://localhost:8081/maintenance/9
+
+### Update a Maintenance Record
+PUT http://localhost:8081/maintenance/9
+Content-Type: application/json
+
+{
+  "carID": 7,
+  "maintenanceDate": "2024-09-12",
+  "description": "Puncture",
+  "cost": "2000.00"
+}
+
+### Delete a Maintenance Record
+DELETE http://localhost:8081/maintenance/2
+
+### RESERVATION TABLE
+
+### Create a Reservation
+POST http://localhost:8081/reservation/register
+Content-Type: application/json
+
+{
+  "customerID": 3,
+  "carID": 10,
+  "reservationDate": "2025-05-12",
+  "pickupDate": "2025-05-13",
+  "returnDate": "2025-05-18"
+}
+
+### Get All Reservations
+GET http://localhost:8081/reservations
+
+### Get All Customer Reservations
+GET http://localhost:8081/reservations/customer/5
+
+### Get a Reservation by ID
+GET http://localhost:8081/reservation/3
+
+### Update a Reservation
+PUT http://localhost:8081/reservation/1
+Content-Type: application/json
+
+{
+  "customerID": 1,
+  "carID": 1,
+  "reservationDate": "2025-05-01",
+  "pickupDate": "2025-05-04",
+  "returnDate": "2025-05-08"
+}
+
+### Delete a Reservation
+DELETE http://localhost:8081/reservation/3
+
+### PAYMENT TABLE
+
+### Create a Payment
+POST http://localhost:8081/payment/register
+Content-Type: application/json
+
+{
+  "bookingID": 4,
+  "paymentDate": "2024-01-09",
+  "amount": "17000.00",
+  "paymentMethod": "Debit Card"
+}
+
+### Get All Payments
+GET http://localhost:8081/payments
+
+### Get a Payment by ID
+GET http://localhost:8081/payment/1
+
+### Update a Payment
+PUT http://localhost:8081/payment/8
+Content-Type: application/json
+
+{
+  "bookingID": 3,
+  "paymentDate": "2024-04-11",
+  "amount": "11000.00",
+  "paymentMethod": "Bank Transfer"
+}
+
+### Delete a Payment
+DELETE http://localhost:8081/payment/1
+
+### BOOKINGS TABLE
+
+### Create a Booking
+POST http://localhost:8081/booking/register
+Content-Type: application/json
+
+{
+    "carID": 5,
+    "customerID": 1,
+    "rentalStartDate": "2025-06-08",
+    "rentalEndDate": "2025-06-11",
+    "totalAmount": "7500.00"
+  }
+
+### Get All Bookings
+GET http://localhost:8081/bookings
+
+### Get All Customer Bookings
+GET http://localhost:8081/bookings/customer/3
+
+
+### Get a Booking by ID
+GET http://localhost:8081/booking/3
+
+### Update a Booking
+PUT http://localhost:8081/booking/3
+Content-Type: application/json
+
+{
+  "carID": 9,
+  "customerID": 1,
+  "rentalStartDate": "2025-06-01",
+  "rentalEndDate": "2025-06-06",
+  "totalAmount": "18000.00"
+}
+
+### Delete a Booking
+DELETE http://localhost:8081/booking/1
