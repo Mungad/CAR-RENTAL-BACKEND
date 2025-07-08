@@ -10,7 +10,6 @@ import {
 
 const car = (app: Express) => {
   app.route("/car/register").post(
-    adminRoleAuth,
     async (req, res, next) => {
     try {
       await createCarController(req, res);
@@ -29,7 +28,6 @@ const car = (app: Express) => {
   });
 
   app.route("/car/:id").get(
-    adminRoleAuth,
     async (req, res, next) => {
     try {
       await getCarByIdController(req, res);
@@ -39,7 +37,6 @@ const car = (app: Express) => {
   });
 
   app.route("/car/:id").put(
-    adminRoleAuth,
     async (req, res, next) => {
     try {
       await updateCarController(req, res);

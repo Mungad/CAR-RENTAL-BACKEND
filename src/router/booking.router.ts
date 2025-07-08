@@ -11,7 +11,6 @@ import { adminRoleAuth, userRoleAuth, bothRoleAuth } from "../middleware/bearerA
 
 const booking = (app: Express) => {
   app.route("/booking/register").post(
-    userRoleAuth,
     async (req, res, next) => {
       try {
         await createBookingController(req, res);
@@ -22,7 +21,6 @@ const booking = (app: Express) => {
   );
 
   app.route("/bookings").get(
-    adminRoleAuth,
     async (req, res, next) => {
       try {
         await getBookingController(req, res);
@@ -33,7 +31,6 @@ const booking = (app: Express) => {
   );
 
   app.route("/booking/:id").get(
-    adminRoleAuth,
     async (req, res, next) => {
       try {
         await getBookingByIdController(req, res);
@@ -44,7 +41,6 @@ const booking = (app: Express) => {
   );
 
   app.route("/bookings/customer/:customerID").get(
-    bothRoleAuth,
     async (req, res, next) => {
       try {
         await getBookingsByCustomerIdController(req, res);
@@ -55,7 +51,6 @@ const booking = (app: Express) => {
   );
 
   app.route("/booking/:id").put(
-    adminRoleAuth,
     async (req, res, next) => {
       try {
         await updateBookingController(req, res);
@@ -66,7 +61,6 @@ const booking = (app: Express) => {
   );
 
   app.route("/booking/:id").delete(
-    userRoleAuth,
     async (req, res, next) => {
       try {
         await deleteBookingController(req, res);
