@@ -49,8 +49,7 @@ const customer = (app: Express) => {
 
   // ✅ GET ALL CUSTOMERS (admin only)
   app.route("/customers").get(
-    adminRoleAuth,
-    async (req, res, next) => {
+   async (req, res, next) => {
       try {
         await getCustomerController(req, res);
       } catch (error: any) {
@@ -61,7 +60,6 @@ const customer = (app: Express) => {
 
   // ✅ GET CUSTOMER BY ID (admin only)
   app.route("/customer/:id").get(
-    adminRoleAuth,
     async (req, res, next) => {
       try {
         await getCustomerByIdController(req, res);
@@ -85,7 +83,6 @@ const customer = (app: Express) => {
 
   // ✅ DELETE CUSTOMER (admin only)
   app.route("/customer/:id").delete(
-    adminRoleAuth,
     async (req, res, next) => {
       try {
         await deleteCustomerController(req, res);
